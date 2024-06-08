@@ -1,0 +1,12 @@
+name: Output event on issues
+on:
+  issues:
+    types: [opened]
+jobs:
+  test:
+    runs-on: Ubuntu-latest
+    steps:
+      - name: Print test
+        run: echo test
+      - name: Print github action variable
+        run: echo "${{toJSON(github)}}"
